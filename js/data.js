@@ -1,0 +1,81 @@
+// Course content: each item is [English, Arabic]
+const LECTURES=[
+{i:"💧",t:["Water, pH & Buffers","الماء وpH والبافرات"],w:"ph",p:[
+["Water ionizes slightly into H⁺ and OH⁻. At 25°C, [H⁺] = [OH⁻] = 10⁻⁷ M and Kw = [H⁺][OH⁻] = 10⁻¹⁴.","الماء يتأين قليلًا إلى H⁺ وOH⁻. عند 25°م يكون تركيز كل منهما 10⁻⁷ مولر وثابت الماء Kw = 10⁻¹⁴."],
+["pH = −log[H⁺]. It is a log scale: each unit = 10-fold change. pH 7 neutral, below 7 acidic, above 7 basic.","pH = −log[H⁺]. مقياس لوغاريتمي: كل وحدة تعني تغيرًا 10 أضعاف. 7 متعادل، أقل من 7 حمضي، أكثر من 7 قاعدي."],
+["Acid = proton donor; base = proton acceptor. Strong acids ionize completely (high Ka); weak acids ionize partially and reversibly.","الحمض مانح للبروتون والقاعدة مستقبلة له. الحمض القوي يتأين كليًا (Ka عالٍ) والضعيف جزئيًا وعكسيًا."],
+["A buffer = weak acid + its conjugate base (or weak base + conjugate acid). It resists pH change. Maximum capacity at pH = pKa (ratio 1:1).","البافر = حمض ضعيف + قاعدته المرافقة. يقاوم تغيّر pH، وأقصى كفاءة له عند pH = pKa (النسبة 1:1)."],
+["Body buffers: proteins (most important, intracellular), phosphate (intracellular), H₂CO₃/HCO₃⁻ (blood).","بافرات الجسم: البروتينات (الأهم وداخل الخلايا)، الفوسفات (داخل الخلايا)، الكربونات/البيكربونات (الدم)."],
+["Blood pH = 7.4 (7.35–7.45), [H⁺] = 40 nmol/L. Below 7.0 or above 7.8 is dangerous. Control: blood buffers, respiration, kidneys.","pH الدم = 7.4 (7.35–7.45) وتركيز H⁺ = 40 نانومول/لتر. أقل من 7.0 أو أعلى من 7.8 خطير. التنظيم عبر البافرات والتنفس والكلى."]]},
+{i:"🍬",t:["Carbohydrate Chemistry","كيمياء الكربوهيدرات"],p:[
+["Carbohydrates are polyhydroxy aldehydes or ketones (or compounds that hydrolyze to them). They give ~75% of cell energy (4 kcal/unit), build membranes (glycolipids), plant structure (cellulose), and nucleic acids (ribose, deoxyribose).","الكربوهيدرات مركبات عديدة الهيدروكسيل ألدهيدية أو كيتونية. تعطي حوالي 75% من طاقة الخلية، وتدخل في الأغشية (glycolipids) وبناء النبات (السليلوز) والأحماض النووية."],
+["Classes: monosaccharides (glucose, galactose, fructose), disaccharides, oligosaccharides (3–10 units), polysaccharides (>10 units).","الأنواع: أحادية (جلوكوز، جالاكتوز، فركتوز)، ثنائية، قليلة التسكر (3–10 وحدات)، عديدة التسكر (أكثر من 10)."],
+["Aldose has terminal carbonyl; ketose has middle carbonyl. Trioses 3C, tetroses 4C, pentoses 5C, hexoses 6C.","الألدوز مجموعته الكربونيلية طرفية والكيتوز وسطية. ثلاثية 3C، رباعية 4C، خماسية 5C، سداسية 6C."],
+["Maltose = Glc+Glc (maltase). Sucrose = Glc+Fru (sucrase). Lactose = Glc+Gal (lactase).","المالتوز = جلوكوز+جلوكوز (maltase). السكروز = جلوكوز+فركتوز (sucrase). اللاكتوز = جلوكوز+جالاكتوز (lactase)."],
+["Lactose intolerance: lactase deficiency causing bloating and diarrhea; milk need not be eliminated (acidophilus milk helps). Galactosemia: galactose accumulates, causing mental retardation, cataracts, cirrhosis.","عدم تحمل اللاكتوز: نقص lactase يسبب انتفاخًا وإسهالًا. الجالاكتوزيميا: تراكم الجالاكتوز يسبب تخلفًا عقليًا وعتامة العدسة وتليف الكبد."],
+["Starch: α1,4 chains with α1,6 branches (digestible). Cellulose: β1,4, linear, undigestible by humans. Glycogen: highly branched storage form in animals.","النشا: روابط α1,4 مع تفرعات α1,6 (يُهضم). السليلوز: β1,4 خطي لا يُهضم. الجلايكوجين: متفرع جدًا ومخزن في الحيوان."],
+["Digestion: salivary amylase (mouth) → pancreatic amylase and maltase/sucrase/lactase (small intestine). Fibers are not digested but are fermented to short-chain fatty acids in the colon.","الهضم: amylase اللعاب ثم amylase البنكرياس وإنزيمات الأمعاء. الألياف لا تُهضم وتتخمر في القولون لأحماض دهنية قصيرة."]]},
+{i:"⚡",t:["Glycolysis, TCA & Energy","الجلايكوليسيس وTCA والطاقة"],w:"gl",p:[
+["Glycolysis: 10 reactions in the cytosol converting glucose to 2 pyruvate (aerobic) or 2 lactate (anaerobic).","الجلايكوليسيس: 10 تفاعلات في السيتوسول تحول الجلوكوز إلى 2 pyruvate (هوائي) أو 2 lactate (لاهوائي)."],
+["Investment phase uses 2 ATP; generation phase makes 4 ATP and 2 NADH. Net: 2 ATP anaerobic, 6–8 ATP aerobic.","مرحلة الاستثمار تستهلك 2 ATP ومرحلة الإنتاج تعطي 4 ATP و2 NADH. الصافي: 2 ATP لاهوائيًا و6–8 هوائيًا."],
+["Irreversible steps: hexokinase/glucokinase, phosphofructokinase (rate-limiting), pyruvate kinase.","الخطوات اللاعكسية: hexokinase/glucokinase وphosphofructokinase (المحددة للسرعة) وpyruvate kinase."],
+["Hexokinase: any hexose, low Km, inhibited by G6P. Glucokinase: liver, glucose-specific, high Km, not inhibited by G6P, induced by insulin.","Hexokinase: أي هكسوز، Km منخفض ويثبطه G6P. Glucokinase: في الكبد، خاص بالجلوكوز، Km مرتفع ولا يثبطه G6P وينشطه الإنسولين."],
+["TCA cycle (mitochondrial matrix) oxidizes acetyl-CoA to CO₂: per turn 3 NADH + 1 FADH₂ + 1 GTP = 12 ATP. It is amphibolic and the final common pathway of fuel oxidation.","دورة TCA (في ماتريكس الميتوكوندريا) تؤكسد acetyl-CoA إلى CO₂: لكل لفة 3 NADH + 1 FADH₂ + 1 GTP = 12 ATP. مسار أمفيبولي ومشترك لأكسدة الوقود."],
+["ETC (inner mitochondrial membrane): NADH = 3 ATP, FADH₂ = 2 ATP. One glucose aerobically = 36 or 38 ATP (TCA turns twice).","سلسلة نقل الإلكترون: NADH = 3 ATP وFADH₂ = 2 ATP. الجلوكوز هوائيًا = 36 أو 38 ATP (TCA تلف مرتين)."]]},
+{i:"🔋",t:["Glycogen Metabolism","أيض الجلايكوجين"],w:"gy",p:[
+["Glycogen: α1,4 chains and α1,6 branches. Stored in liver (6%) and muscle (1%). Liver glycogen keeps blood glucose between meals; muscle glycogen fuels the muscle.","الجلايكوجين: سلاسل α1,4 وتفرعات α1,6. يخزن في الكبد (6%) والعضلة (1%). جلايكوجين الكبد ينظم سكر الدم والعضلة تستعمله لنفسها."],
+["Glycogenesis (fed state): UDP-glucose, glycogenin primer, glycogen synthase (α1,4) and branching enzyme (α1,6; ~every 11 residues moves ~6).","التخليق (في حالة الشبع): UDP-glucose وglycogenin كبادئ وglycogen synthase (α1,4) وإنزيم التفرع (α1,6)."],
+["Glycogenolysis (fasting/exercise): glycogen phosphorylase (needs PLP) releases glucose-1-P and stops 4 residues from a branch; debranching enzyme (glucotransferase + α1,6-glucosidase) frees glucose.","التكسير (في الصيام/الرياضة): glycogen phosphorylase (يحتاج PLP) يحرر glucose-1-P ويتوقف قبل الفرع بـ4 بقايا، ثم إنزيم إزالة التفرع يحرر الجلوكوز."],
+["Insulin activates synthesis and inhibits breakdown; glucagon and epinephrine do the opposite via cAMP. Synthase is active when dephosphorylated.","الإنسولين ينشط التخليق ويثبط التكسير، والجلوكاجون والإبينفرين العكس عبر cAMP. الـ synthase نشط وهو dephosphorylated."],
+["Glucose-6-phosphatase exists in liver and kidney only, so muscle cannot release free glucose. Glycogen storage diseases are inherited enzyme defects.","glucose-6-phosphatase موجود في الكبد والكلى فقط فلا تحرر العضلة الجلوكوز. أمراض تخزين الجلايكوجين عيوب إنزيمية وراثية."]]},
+{i:"🧈",t:["Lipids","الدهون"],w:"li",p:[
+["Lipids are hydrophobic, soluble in non-polar solvents. Functions: membranes, energy storage, fuel transport, emulsifiers, vitamins/hormones, insulation.","الدهون كارهة للماء وتذوب في المذيبات غير القطبية. وظائفها: الأغشية، تخزين الطاقة، نقل الوقود، المستحلبات، الفيتامينات والهرمونات، العزل."],
+["TAG = glycerol + 3 fatty acids. Fatty acids are amphipathic; saturated (palmitic 16C) vs unsaturated (linoleic 18:2 Δ9,12). Melting point rises with length and falls with unsaturation. Linoleic and linolenic are essential.","TAG = جليسرول + 3 أحماض دهنية. الحمض الدهني ثنائي الألفة، مشبع (palmitic) أو غير مشبع (linoleic). درجة الانصهار تزيد بالطول وتقل بعدم التشبع. linoleic وlinolenic أساسيان."],
+["Phospholipids are amphipathic membrane lipids (glycerol or sphingosine backbone). Ceramide = sphingosine + fatty acid; glycolipids = ceramide + sugar.","الفوسفوليبيدات دهون غشائية. Ceramide = sphingosine + حمض دهني، والـ glycolipids = ceramide + سكر."],
+["Lipoproteins by density: Chylomicron < VLDL < IDL < LDL < HDL. Chylomicron: dietary TAG. VLDL: endogenous TAG. LDL: bad cholesterol. HDL: returns cholesterol to liver (good).","الليبوبروتينات حسب الكثافة: Chylomicron < VLDL < IDL < LDL < HDL. الأول ينقل الدهون الغذائية وVLDL الداخلية وLDL الكوليسترول الضار وHDL الجيد."],
+["Digestion: bile salts emulsify; pancreatic lipase + colipase give monoacylglycerol + 2 FA. Short-chain FA go to the portal vein; long-chain FA go via lymph in chylomicrons. Malabsorption causes steatorrhoea.","الهضم: أملاح الصفراء تستحلب، وlipase البنكرياس مع colipase. الأحماض القصيرة للوريد البابي والطويلة عبر الليمف في chylomicrons. سوء الامتصاص يسبب steatorrhoea."],
+["Lipogenesis (cytosol): from acetyl-CoA (exported as citrate), needs NADPH, ATP, biotin, HCO₃⁻.","تخليق الأحماض الدهنية (السيتوسول): من acetyl-CoA (يخرج كـ citrate) ويحتاج NADPH وATP وbiotin."],
+["β-oxidation (mitochondrial matrix): activation by thiokinase, carnitine shuttle, then oxidation–hydration–oxidation–cleavage releasing acetyl-CoA. Palmitate → 8 acetyl-CoA, 129 ATP net. Ketone bodies (acetoacetate, β-hydroxybutyrate, acetone) rise in fasting and diabetes; the liver makes but does not use them.","الأكسدة بيتا (الماتريكس): تنشيط ثم نقل بالكارنيتين ثم أكسدة–هيدرة–أكسدة–انشطار. Palmitate ينتج 8 acetyl-CoA و129 ATP صافي. الأجسام الكيتونية ترتفع في الصيام والسكري والكبد يصنعها ولا يستخدمها."]]},
+{i:"🧪",t:["Protein Metabolism & Urea Cycle","أيض البروتين ودورة اليوريا"],w:"ur",p:[
+["Nitrogen balance: equilibrium (adult), positive (growth, pregnancy), negative (infection, healing, malnutrition).","ميزان النيتروجين: تعادل (البالغ)، موجب (النمو والحمل)، سالب (العدوى والشفاء وسوء التغذية)."],
+["Proteases are secreted as inactive zymogens; trypsin activates all pancreatic zymogens.","البروتييزات تفرز كـ zymogens غير نشطة، وtrypsin ينشط كل زيموجينات البنكرياس."],
+["Transamination (needs PLP) moves an amino group to α-ketoglutarate, forming glutamate. All amino acids participate except Lys, Thr, Pro, hydroxyproline. ALT and AST diagnose liver/heart disease.","النقل الأميني (يحتاج PLP) ينقل مجموعة الأمين إلى α-ketoglutarate فيتكون glutamate. تشارك كل الأحماض عدا Lys وThr وPro وhydroxyproline. وALT وAST للتشخيص."],
+["Oxidative deamination by glutamate dehydrogenase (liver mitochondria) releases free ammonia.","نزع الأمين التأكسدي بواسطة glutamate dehydrogenase يحرر الأمونيا الحرة."],
+["Ammonia transport: muscle → alanine (glucose-alanine cycle); other tissues → glutamine (glutamine synthetase, uses ATP).","نقل الأمونيا: من العضلة كـ alanine ومن باقي الأنسجة كـ glutamine."],
+["Ammonia is toxic to the brain: it depletes α-ketoglutarate (TCA impaired) and GABA.","الأمونيا سامة للمخ لأنها تستنزف α-ketoglutarate وGABA."],
+["Urea cycle disorders: CPS-1 deficiency, OTC deficiency (X-linked), citrullinemia, argininosuccinic aciduria, hyperargininemia, HHH syndrome. Most severe when the block is at reaction 1 or 2.","اضطرابات دورة اليوريا: نقص CPS-1 وOTC (مرتبط بـ X) وcitrullinemia وargininosuccinic aciduria وhyperargininemia وHHH. الأشد عند التفاعل 1 أو 2."],
+["Carbon skeletons: ketogenic only = Leu, Lys; both = Ile, Trp, Phe, Tyr; the rest are glycogenic.","الهياكل الكربونية: كيتونية فقط Leu وLys؛ كيتونية وجلوكوزية Ile وTrp وPhe وTyr؛ والباقي جلوكوزية."]]}
+];
+const GL=[["Glucose → G6P","Hexokinase / Glucokinase","Irreversible, uses ATP, traps glucose | لا عكسي ويستهلك ATP",-1,0],["G6P → F6P","Phosphoglucose isomerase","Aldose → ketose",0,0],["F6P → F-1,6-BP","Phosphofructokinase (PFK)","Rate-limiting, uses ATP | الخطوة المحددة",-1,0],["F-1,6-BP → G3P + DHAP","Aldolase","6C → two 3C",0,0],["DHAP ⇌ G3P","Triose phosphate isomerase","2 G3P per glucose",0,0],["G3P → 1,3-BPG","G3P dehydrogenase","Makes NADH (×2) | ينتج NADH",0,2],["1,3-BPG → 3-PG","Phosphoglycerate kinase","Substrate-level phosphorylation (+2 ATP)",2,0],["3-PG → 2-PG","Phosphoglycerate mutase","",0,0],["2-PG → PEP","Enolase","",0,0],["PEP → Pyruvate","Pyruvate kinase","Irreversible, +2 ATP | لا عكسي",2,0]];
+const CY={tca:{t:"TCA cycle | دورة كريبس",n:["Oxaloacetate (4C)","Citrate (6C)","Isocitrate (6C)","α-Ketoglutarate (5C)","Succinyl-CoA (4C)","Succinate (4C)","Fumarate (4C)","Malate (4C)"],i:["+ acetyl-CoA via citrate synthase","Aconitase (isomerization)","Isocitrate DH → CO₂ + NADH","α-KG DH → CO₂ + NADH","Succinate thiokinase → GTP/ATP","Succinate DH → FADH₂","Fumarase (hydration)","Malate DH → NADH, back to OAA"]},
+ur:{t:"Urea cycle | دورة اليوريا",n:["Carbamoyl-P","Citrulline","Argininosuccinate","Arginine","Ornithine + Urea"],i:["CPS-1 (mitochondria): rate-limiting, 2 ATP, activated by N-acetylglutamate","OTC (mitochondria); deficiency is X-linked","Argininosuccinate synthetase (cytosol); aspartate gives the 2nd N","Argininosuccinase → arginine + fumarate","Arginase → urea + ornithine (ornithine, lysine inhibit)"]}};
+const EXAM=[
+["mc","Blood pH normal range?",["7.35–7.45","6.8–7.0","7.8–8.2","7.0–7.2"],0,"pH الدم الطبيعي 7.35–7.45"],
+["mc","Kw at 25°C equals:",["10⁻⁷","10⁻¹⁴","55.5","10¹⁴"],1,"Kw = 10⁻¹⁴"],
+["mc","Maximum buffer capacity occurs when:",["pH = pKa","pH = 7","[A⁻] = 10[HA]","only acid present"],0,"عند pH = pKa تكون النسبة 1:1"],
+["mc","Most important body buffers:",["Phosphates","Bicarbonate","Proteins","Ammonia"],2,"البروتينات أهم البافرات"],
+["mc","Lactose hydrolysis gives:",["Glc + Glc","Glc + Gal","Glc + Fru","Gal + Fru"],1,"اللاكتوز = جلوكوز + جالاكتوز"],
+["mc","Humans cannot digest cellulose because of:",["α1,4","α1,6","β1,4","peptide bonds"],2,"رابطة β1,4"],
+["mc","Rate-limiting enzyme of glycolysis:",["Hexokinase","Aldolase","PFK","Enolase"],2,"PFK هو الخطوة المحددة"],
+["mc","Net ATP of anaerobic glycolysis:",["2","4","8","36"],0,"2 ATP فقط"],
+["mc","TCA cycle per turn yields:",["1 NADH + 3 FADH₂","3 NADH + 1 FADH₂ + 1 GTP","4 NADH","2 NADH + 2 FADH₂"],1,"3 NADH + 1 FADH₂ + 1 GTP"],
+["mc","Tissue lacking glucose-6-phosphatase:",["Liver","Kidney","Muscle","Liver and kidney"],2,"العضلة لا تحرر الجلوكوز للدم"],
+["mc","Highest-density lipoprotein:",["Chylomicron","VLDL","LDL","HDL"],3,"HDL الأعلى كثافة"],
+["mc","Net ATP from palmitate (course figures):",["36","96","129","131"],2,"35 + 96 − 2 = 129"],
+["mc","Rate-limiting enzyme of the urea cycle:",["Arginase","OTC","CPS-1","Argininosuccinase"],2,"CPS-1 يحتاج 2 ATP"],
+["mc","Second nitrogen of urea comes from:",["Glutamine","Aspartate","Alanine","Ornithine"],1,"الـ aspartate"],
+["mc","Amino acid that does NOT transaminate:",["Alanine","Aspartate","Lysine","Glutamate"],2,"Lys وThr وPro وhydroxyproline"],
+["tf","Each pH unit is a 2-fold change in [H⁺].",0,"التغير 10 أضعاف"],
+["tf","Glycolysis occurs in the cytosol.",1,"صحيح، في السيتوسول"],
+["tf","Insulin activates glycogen breakdown.",0,"الإنسولين يثبط التكسير"],
+["tf","LDL is called good cholesterol.",0,"الجيد هو HDL"],
+["tf","β-oxidation occurs in the mitochondrial matrix.",1,"صحيح"],
+["tf","Hexokinase is inhibited by glucose-6-phosphate.",1,"صحيح، أما glucokinase فلا"],
+["tf","Sucrose gives glucose + galactose.",0,"السكروز = جلوكوز + فركتوز"],
+["tf","Muscle sends nitrogen to the liver as alanine.",1,"صحيح (glucose-alanine cycle)"],
+["fb","Transamination needs the coenzyme ___ (3 letters).",["plp"],0,"Pyridoxal phosphate = PLP"],
+["fb","The disaccharide of milk is ___.",["lactose"],0,"اللاكتوز"],
+["fb","Palmitic acid gives ___ acetyl-CoA by β-oxidation (number).",["8"],0,"16 ÷ 2 = 8"],
+["fb","Excess ketone bodies in urine is called ___.",["ketonuria"],0,"Ketonuria"],
+["fb","Enzyme that releases urea from arginine: ___.",["arginase"],0,"Arginase"]
+];
